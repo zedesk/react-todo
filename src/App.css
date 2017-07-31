@@ -1,0 +1,82 @@
+.App {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right:0;
+  left:0;
+  background: lavender;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  height: 64px;
+  font-size: 24px;
+  font-family: Roboto;
+  background: purple;
+  color: white;
+  display: flex;
+  padding:0 16px;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.TodoItem {
+  margin: 5px 10px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  background: white;
+  display:flex;
+  align-items: center;
+}
+
+.TodoItem div.label {
+  flex:1;
+}
+
+.TodoItem.checked div {
+  color:lightgrey;
+  text-decoration: line-through;
+}
+
+.TodoList {
+  flex: 1;
+  list-style-type: none;
+  padding:0;
+  overflow: auto;
+  margin: 0;
+}
+
+.TodoInput {
+  display: flex;
+  margin: 10px;
+}
+
+.TodoInput input {
+  flex: 1;
+  font-size: inherit;
+  padding:5px;
+  outline: none;
+}
+
+.TodoInput button {
+  background: purple;
+  color: white;
+  border: none;
+  border-radius:5px;
+  font-size: inherit;
+  outline: none;
+}
+
+.svgBtn {
+  height: 24px;
+  margin:5px;
+}
+
+.blank {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+}
