@@ -9,7 +9,8 @@ class App extends Component {
     super(props);
     this.state = { 
       todoItems: [],
-      seed: 0
+      seed: 0,
+      drawer: false
     }
   }
 
@@ -40,15 +41,26 @@ class App extends Component {
     })
   }
 
+  toggleNav() {
+    const {drawer} = this.state;
+    this.setState({ drawer: !drawer})
+  }
+
   render() {
-    const {todoItems} = this.state
+    const {todoItems, drawer} = this.state
     return (
       <div className="App">
-        <Toolbar />
-        <TodoInput onAdd={this.addItem.bind(this)}/>
-        <TodoList todoItems={todoItems} 
-           onRemove={this.removeItem.bind(this)}
-           onToggle={this.toggleItem.bind(this)}/>
+        <nav hidden={!drawer}>
+          <i className="fa fa-arrow-left"></i>
+          <span>test</span>
+        </nav>
+        <main>
+          <Toolbar />
+          <TodoInput onAdd={this.addItem.bind(this)}/>
+          <TodoList todoItems={todoItems} 
+            onRemove={this.removeItem.bind(this)}
+            onToggle={this.toggleItem.bind(this)}/>
+        </main>
       </div>
     );
   }
